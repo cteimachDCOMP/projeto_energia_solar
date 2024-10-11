@@ -26,7 +26,7 @@ public class Main {
         frameFuncionario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameFuncionario.setSize(400, 200);
 
-        JFrame frameInputCliente = new JFrame("Input Form");
+        JFrame frameInputCliente = new JFrame("Cadastrar Cliente");
         frameInputCliente.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameInputCliente.setSize(400, 200);
 
@@ -62,33 +62,23 @@ public class Main {
         JButton buttonSubmeter = new JButton("Submeter");
 
         // Adiciona um action listener para cada botão
-        buttonCliente.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        buttonCliente.addActionListener(e -> {
                 frameInicial.setVisible(false);  // Hide frameInicial
                 frameCliente.setVisible(true);
-            }
         });
 
-        buttonFuncionario.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        buttonFuncionario.addActionListener(e -> {
                 frameInicial.setVisible(false);  // Hide frameInicial
                 frameFuncionario.setVisible(true);  // Show frameFuncionario
-            }
         });
 
-        buttonCadastrarCliente.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        buttonCadastrarCliente.addActionListener(e -> {
                 frameFuncionario.setVisible(false);  // Hide frameFuncionario
                 frameInputCliente.setVisible(true);  // Show frameInputCliente
-            }
+                frameInputCliente.pack();
         });
 
-        buttonSubmeter.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        buttonSubmeter.addActionListener(e -> {
 
                 String nome = textFieldNome.getText();
                 String endereço = textFieldEndereço.getText();
@@ -115,7 +105,6 @@ public class Main {
                 textFieldEndereço.setText("");
                 textFieldTelefone.setText("");
                 textFieldProjetos.setText("");
-            }
         });
 
         // Adiciona os botões para o panel
