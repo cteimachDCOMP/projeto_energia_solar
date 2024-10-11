@@ -41,7 +41,7 @@ public class SistemaEmpresa {
 	//ou
 	//através de placa e inversor que o cliente deseja adquirir, dados preços.
 	//Além disso, solicita um novo projeto baseado no
-	public void solicitarProjeto(Cliente cliente, int consumoMensal, double potenciaPlaca, double potenciaInversor, double irradiacao) {
+	public void solicitarProjeto(String nomeProjeto, int consumoMensal, double potenciaPlaca, double potenciaInversor, double irradiacao) {
 		 
 		//Cálculo do Dimensionamento do SistemaFotovoltaico
 		setNpaineis((int)Math.ceil((consumoMensal)/(irradiacao*potenciaPlaca*30)));
@@ -51,7 +51,7 @@ public class SistemaEmpresa {
 		System.out.println("Número de paineis necessários: " + getNpaineis());
 		System.out.println("Número de inversores necessários: " + getNinversores());
 		
-		Projeto projeto = new Projeto(cliente, consumoMensal);
+		Projeto projeto = new Projeto(nomeProjeto);
 		if(!projetos.contains(projeto)) {
 			projetos.add(projeto);
 		}
