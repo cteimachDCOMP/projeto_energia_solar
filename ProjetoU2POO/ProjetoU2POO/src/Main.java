@@ -27,8 +27,8 @@ public class Main {
         frameFuncionario.setSize(400, 200);
 
         JFrame frameInputCliente = new JFrame("Cadastrar Cliente");
-        frameInputCliente.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frameInputCliente.setSize(400, 200);
+        frameInputCliente.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Changed from EXIT_ON_CLOSE
+        frameInputCliente.setSize(400, 300);
 
         // Cria os panels para armazenar os botões
         JPanel panelInicial = new JPanel();
@@ -64,18 +64,21 @@ public class Main {
         // Adiciona um action listener para cada botão
         buttonCliente.addActionListener(e -> {
                 frameInicial.setVisible(false);  // Hide frameInicial
+                frameCliente.setLocationRelativeTo(null);
                 frameCliente.setVisible(true);
         });
 
         buttonFuncionario.addActionListener(e -> {
                 frameInicial.setVisible(false);  // Hide frameInicial
+                frameFuncionario.setLocationRelativeTo(null);
                 frameFuncionario.setVisible(true);  // Show frameFuncionario
         });
 
         buttonCadastrarCliente.addActionListener(e -> {
-                frameFuncionario.setVisible(false);  // Hide frameFuncionario
-                frameInputCliente.setVisible(true);  // Show frameInputCliente
-                frameInputCliente.pack();
+            frameFuncionario.setVisible(false);  // Hide frameFuncionario
+            frameInputCliente.pack();  // Pack before setting visible
+            frameInputCliente.setLocationRelativeTo(null);  // Center on screen
+            frameInputCliente.setVisible(true);  // Show frameInputCliente
         });
 
         buttonSubmeter.addActionListener(e -> {
@@ -133,6 +136,9 @@ public class Main {
         frameFuncionario.add(panelFuncionario);
         frameInputCliente.add(panelInputCliente);
 
+        // Centraliza o frame inicial
+        frameInicial.setLocationRelativeTo(null);
+        
         // Torna o frame inicial visível
         frameInicial.setVisible(true);
     }
