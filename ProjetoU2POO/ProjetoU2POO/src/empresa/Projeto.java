@@ -1,20 +1,14 @@
 package cliente;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import empresa.Equipamentos;
-
 public class Projeto {
 	private String nome;
 	private Cliente cliente;
 	private int consumoMedio;
-	private List<Equipamentos> equipamentos;
 	
-	public Projeto(Cliente cliente, int consumoMedio) {
+	public Projeto(String nome, Cliente cliente, int consumoMedio) {
+		this.nome = nome;
 		this.cliente = cliente;
 		this.consumoMedio = consumoMedio;
-		this.equipamentos = new ArrayList<>();
 	}
 
 	public String getNome() {
@@ -28,10 +22,6 @@ public class Projeto {
 	public int getConsumoMedio() {
 		return consumoMedio;
 	}
-
-	public List<Equipamentos> getEquipamentos() {
-		return equipamentos;
-	}
 	
 	public void setNome (String nome) {
 		this.nome = nome;
@@ -43,9 +33,5 @@ public class Projeto {
 
 	public void setConsumoMedio(int consumoMedio) {
 		this.consumoMedio = consumoMedio;
-	}
-
-	public void setEquipamentos(List<Equipamentos> equipamentos) {
-		this.equipamentos = equipamentos;
 	}
 }
