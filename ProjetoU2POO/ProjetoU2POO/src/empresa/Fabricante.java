@@ -1,33 +1,37 @@
-package empresa;
+package cliente;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Fabricante {
+public class Projeto {
 	private String nome;
-	private List<PlacaSolar> placasSolares;
-	private List<Inversor> inversores;
+	private Cliente cliente;
+	private int consumoMedio;
 	
-	public Fabricante(String nome){
+	public Projeto(String nome, Cliente cliente, int consumoMedio) {
 		this.nome = nome;
-		this.placasSolares = new ArrayList<>();
-		this.inversores = new ArrayList<>();
+		this.cliente = cliente;
+		this.consumoMedio = consumoMedio;
 	}
 
-	//Getter e Setter
 	public String getNome() {
 		return nome;
+	} 
+	
+	public Cliente getCliente() {
+		return cliente;
 	}
 
-	public void setNome(String nome) {
+	public int getConsumoMedio() {
+		return consumoMedio;
+	}
+	
+	public void setNome (String nome) {
 		this.nome = nome;
 	}
-	
-	public void adicionarPlacasSolares(PlacaSolar placaSolar) {
-		placasSolares.add(placaSolar);
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
-	public void adicionarInversores(Inversor inversor) {
-		inversores.add(inversor);
+
+	public void setConsumoMedio(int consumoMedio) {
+		this.consumoMedio = consumoMedio;
 	}
-	
 }
