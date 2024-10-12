@@ -1,4 +1,10 @@
+package main;
+
 import javax.swing.*;
+
+import cliente.Cliente;
+import cliente.Projeto;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,7 +17,6 @@ public class Main {
     public static void main(String[] args) {
         // Cria lista de clientes e projetos
         ArrayList<Cliente> clientes = new ArrayList<>();
-        ArrayList<Projeto> projetos = new ArrayList<>();
 
         // Cria os frames
         JFrame frameInicial = new JFrame("Você é...?");
@@ -34,6 +39,9 @@ public class Main {
         JPanel panelInicial = new JPanel();
         panelInicial.setLayout(new GridLayout(2, 1, 10, 10));
 
+        JPanel panelCliente = new JPanel();
+        panelCliente.setLayout(new GridLayout(2, 2, 10, 10));
+        
         JPanel panelFuncionario = new JPanel();
         panelFuncionario.setLayout(new GridLayout(2, 2, 10, 10));
 
@@ -50,15 +58,17 @@ public class Main {
         JLabel labelTelefone = new JLabel("Insira o telefone do cliente: ");
         JTextField textFieldTelefone = new JTextField();
 
-        JLabel labelProjetos = new JLabel("Insira os projetos do cliente separados por virgula: ");
-        JTextField textFieldProjetos = new JTextField();
-
         // Cria os botões
         JButton buttonCliente = new JButton("Cliente");
         JButton buttonFuncionario = new JButton("Funcionário");
 
         JButton buttonCadastrarCliente = new JButton("Cadastrar Cliente");
-
+        JButton buttonCadastrarProjeto = new JButton("Cadastrar Projeto");
+        
+        JButton buttonCadastrarFabricante = new JButton("Cadastrar Fabricante");
+        JButton buttonCadastrarPlacaSolar = new JButton("Cadastrar Placa Solar");
+        JButton buttonCadastrarInversor = new JButton("Cadastrar Inversor");
+        
         JButton buttonSubmeter = new JButton("Submeter");
 
         // Adiciona um action listener para cada botão
@@ -69,9 +79,9 @@ public class Main {
         });
 
         buttonFuncionario.addActionListener(e -> {
-                frameInicial.setVisible(false);  // Hide frameInicial
-                frameFuncionario.setLocationRelativeTo(null);
-                frameFuncionario.setVisible(true);  // Show frameFuncionario
+        	frameInicial.setVisible(false);  // Hide frameInicial
+        	frameFuncionario.setLocationRelativeTo(null);
+        	frameFuncionario.setVisible(true);  // Show frameFuncionario
         });
 
         buttonCadastrarCliente.addActionListener(e -> {
@@ -80,26 +90,30 @@ public class Main {
             frameInputCliente.setLocationRelativeTo(null);  // Center on screen
             frameInputCliente.setVisible(true);  // Show frameInputCliente
         });
+        
+        buttonCadastrarProjeto.addActionListener(e -> {
+        	
+        });
+        
+        buttonCadastrarFabricante.addActionListener(e -> {
+        	
+        });
+        
+        buttonCadastrarPlacaSolar.addActionListener(e -> {
+        	
+        });
 
+        buttonCadastrarInversor.addActionListener(e -> {
+        	
+        });
+        
         buttonSubmeter.addActionListener(e -> {
 
                 String nome = textFieldNome.getText();
                 String endereço = textFieldEndereço.getText();
                 String telefone = textFieldTelefone.getText();
-                String projetosStr = textFieldProjetos.getText();
 
-                List<String> listaDeNomesDeProjetos = Arrays.asList(projetosStr.split(","));
-
-                ArrayList<Projeto> listaDeProjetos = new ArrayList<>();
-
-                // Adicionar lógica correta para os projetos
-                for (String nomeDeProjeto : listaDeNomesDeProjetos) {
-                    Projeto projeto = new Projeto(nomeDeProjeto);  // Suponha que a classe Projeto tenha esse construtor
-                    listaDeProjetos.add(projeto);
-                }
-
-                Cliente cliente = new Cliente(nome, endereço, telefone, listaDeProjetos);  // Criar cliente
-                clientes.add(cliente);
+                clientes.add(new Cliente(nome, endereço, telefone));  // Criar cliente)
 
                 JOptionPane.showMessageDialog(frameInputCliente, "Cliente cadastrado com sucesso!");
 
@@ -107,14 +121,18 @@ public class Main {
                 textFieldNome.setText("");
                 textFieldEndereço.setText("");
                 textFieldTelefone.setText("");
-                textFieldProjetos.setText("");
         });
 
         // Adiciona os botões para o panel
         panelInicial.add(buttonCliente);
         panelInicial.add(buttonFuncionario);
 
-        panelFuncionario.add(buttonCadastrarCliente);
+        panelCliente.add(buttonCadastrarCliente);
+        panelCliente.add(buttonCadastrarProjeto);
+        
+        panelFuncionario.add(buttonCadastrarFabricante);
+        panelFuncionario.add(buttonCadastrarPlacaSolar);
+        panelFuncionario.add(buttonCadastrarInversor);
 
         // Adiciona os labels e textfields para o panel onde o usuário colocará os dados do cliente
         panelInputCliente.add(labelNome);
@@ -126,13 +144,11 @@ public class Main {
         panelInputCliente.add(labelTelefone);
         panelInputCliente.add(textFieldTelefone);
 
-        panelInputCliente.add(labelProjetos);
-        panelInputCliente.add(textFieldProjetos);
-
         panelInputCliente.add(buttonSubmeter);
 
         // Adiciona o panel para o frame
         frameInicial.add(panelInicial);
+        frameCliente.add(panelCliente);
         frameFuncionario.add(panelFuncionario);
         frameInputCliente.add(panelInputCliente);
 
