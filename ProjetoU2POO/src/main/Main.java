@@ -328,7 +328,7 @@ public class Main {
 
                 for (Cliente cliente : clientes) {
                 	if (cliente.getNome().equals(nome)) {
-                		JOptionPane.showMessageDialog(frameInputCliente, "Cliente com os seguintes dados:/nNome: " + cliente.getNome() + "/nEndereço: " + cliente.getEndereco() + "/nTelefone: " + cliente.getTelefone() + "/ncadastrado com sucesso!");
+                		JOptionPane.showMessageDialog(frameInputCliente, "Cliente com os seguintes dados:\nNome: " + cliente.getNome() + "\nEndereço: " + cliente.getEndereco() + "\nTelefone: " + cliente.getTelefone() + "\ncadastrado com sucesso!");
                 	}
                 }
                 // Opcional: Limpar campos de texto após o cadastro
@@ -395,7 +395,7 @@ public class Main {
         	
         	for (Fabricante fabricante : fabricantes) {
         		if (fabricante.getNome().equals(nomeDoFabricante)) {
-        			JOptionPane.showMessageDialog(frameInputFabricante, "Projeto com o seguinte nome:/n" + fabricante.getNome() + "/nFoi cadastrado com sucesso!");
+        			JOptionPane.showMessageDialog(frameInputFabricante, "Projeto com o seguinte nome:\n" + fabricante.getNome() + "\nFoi cadastrado com sucesso!");
         		}
         	}
         });
@@ -421,7 +421,7 @@ public class Main {
         	
         	for (PlacaSolar placaSolar : placasSolares) {
         		if (placaSolar.getModelo().equals(nomeDaPlacaSolar)) {
-        			JOptionPane.showMessageDialog(frameInputProjeto, "Placa solar com os seguintes dados:/nModelo:" + placaSolar.getModelo() + "/nCapacidade: " + placaSolar.getCapacidade() + "/nPreço: " + placaSolar.getPreco() + "/nLista de fabricantes: " + placaSolar.getFabricante() + "/nFoi cadastrado com sucesso!");
+        			JOptionPane.showMessageDialog(frameInputProjeto, "Placa solar com os seguintes dados:\nModelo:" + placaSolar.getModelo() + "\nCapacidade: " + placaSolar.getCapacidade() + "\nPreço: " + placaSolar.getPreco() + "\nLista de fabricantes: " + placaSolar.getFabricante() + "\nFoi cadastrado com sucesso!");
         		}
         	}
         });
@@ -447,7 +447,7 @@ public class Main {
         	
         	for (Inversor inversor : inversores) {
         		if (inversor.getModelo().equals(modeloDoInversor)) {
-        			JOptionPane.showMessageDialog(frameInputInversor, "Inversor com os seguintes dados:/nModelo:" + inversor.getModelo() + "/nPotência: " + inversor.getPotencia() + "/nPreço: " + inversor.getPreco() + "/nFabricante: " + inversor.getFabricante() + "/nFoi cadastrado com sucesso!");
+        			JOptionPane.showMessageDialog(frameInputInversor, "Inversor com os seguintes dados:\nModelo:" + inversor.getModelo() + "\nPotência: " + inversor.getPotencia() + "\nPreço: " + inversor.getPreco() + "\nFabricante: " + inversor.getFabricante() + "\nFoi cadastrado com sucesso!");
         		}
         	}
         });
