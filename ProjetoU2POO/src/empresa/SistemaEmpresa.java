@@ -58,7 +58,7 @@ public class SistemaEmpresa {
 	}
 	
 	
-	public static Projeto dimensionarSistema(Cliente cliente, String nomeProjeto, double consumoMensal, double irradiacaoSolar, PlacaSolar placa, Inversor inversor) {
+	public Projeto dimensionarSistema(Cliente cliente, String nomeProjeto, double consumoMensal, double irradiacaoSolar, PlacaSolar placa, Inversor inversor) {
 		int numeroPlacas = (int) Math.ceil(consumoMensal / (placa.getCapacidade() * irradiacaoSolar * 30)); // 30 dias
 	    int numeroInversores = (int) Math.ceil(consumoMensal / inversor.getPotencia());
 	    
