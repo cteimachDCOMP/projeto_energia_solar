@@ -33,7 +33,7 @@ public class PlacaSolar {
 		this.modelo = modelo;
 	}
 
-	public void setCapacidade(int capacidade) {
+	public void setCapacidade(double capacidade) {
 		this.capacidade = capacidade;
 	}
 
