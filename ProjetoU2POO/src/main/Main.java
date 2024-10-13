@@ -96,6 +96,9 @@ public class Main {
         
         JLabel labelConsumoMedio = new JLabel("Insira o seu consumo médio de energia");
         JTextField textFieldConsumoMedio = new JTextField();
+        
+        JLabel labelIrradiaçao = new JLabel("Insira a irradiação de sua região");
+        JTextField textFieldIrradiaçao = new JTextField();
 
         JButton buttonSubmeterProjeto = new JButton("Submeter");
         
@@ -227,12 +230,15 @@ public class Main {
         	String nomeDoRequisitador = textFieldNomeDoRequisitador.getText();
         	String nomeDoProjeto = textFieldNomeDoProjeto.getText();
         	String consumoMedio = textFieldConsumoMedio.getText();
+        	String irradiaçao = textFieldIrradiaçao.getText();
         	
-        	int intConsumoMedio = Integer.valueOf(consumoMedio);
+        	Double doubleConsumoMedio = Double.valueOf(consumoMedio);
+        	Double doubleIrradiaçao = Double.valueOf(irradiaçao);
+        	
         	
         	for (Cliente cliente : clientes) {
         		if (cliente.getNome().equals(nomeDoRequisitador)) {
-        			projetos.add(new Projeto(nomeDoProjeto, cliente, intConsumoMedio));
+        			projetos.add(new Projeto(nomeDoProjeto, cliente, doubleConsumoMedio, doubleIrradiaçao));
         		}
         	}
         	
@@ -339,6 +345,9 @@ public class Main {
         
         panelInputProjeto.add(labelConsumoMedio);
         panelInputProjeto.add(textFieldConsumoMedio);
+        
+        panelInputProjeto.add(labelIrradiaçao);
+        panelInputProjeto.add(textFieldIrradiaçao);
         
         panelInputProjeto.add(buttonSubmeterProjeto);
         
