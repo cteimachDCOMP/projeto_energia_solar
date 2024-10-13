@@ -58,6 +58,8 @@ public class Main {
         panelCliente.add(buttonCadastrarCliente);
         panelCliente.add(buttonCadastrarProjeto);
         
+        panelCliente.add(buttonRetornarDeClienteParaInicial);
+        
         frameCliente.add(panelCliente);
         
         // Cria o frameFuncionario
@@ -77,6 +79,8 @@ public class Main {
         panelFuncionario.add(buttonCadastrarFabricante);
         panelFuncionario.add(buttonCadastrarPlacaSolar);
         panelFuncionario.add(buttonCadastrarInversor);
+        
+        panelFuncionario.add(buttonRetornarDeFuncionarioParaInicial);
         
         frameFuncionario.add(panelFuncionario);
         
@@ -111,6 +115,8 @@ public class Main {
         panelInputCliente.add(textFieldTelefone);
 
         panelInputCliente.add(buttonSubmeterCliente);
+        
+        panelInputCliente.add(buttonRetornarDeInputClienteParaCliente);
         
         frameInputCliente.add(panelInputCliente);
         
@@ -152,6 +158,8 @@ public class Main {
         
         panelInputProjeto.add(buttonSubmeterProjeto);
         
+        panelInputProjeto.add(buttonRetornarDeInputProjetoParaCliente);
+        
         frameInputProjeto.add(panelInputProjeto);
         
         // Cria o frameInputFabricante
@@ -173,6 +181,8 @@ public class Main {
         panelInputFabricante.add(textFieldNomeDoFabricante);
         
         panelInputFabricante.add(buttonSubmeterFabricante);
+        
+        panelInputFabricante.add(buttonRetornarDeFabricanteParaFuncionario);
         
         frameInputFabricante.add(panelInputFabricante);
         
@@ -214,6 +224,8 @@ public class Main {
         
         panelInputPlacaSolar.add(buttonSubmeterPlacaSolar);
         
+        panelInputPlacaSolar.add(buttonRetornarDePlacaSolarParaFuncionario);
+        
         frameInputPlacaSolar.add(panelInputPlacaSolar);
         
         // Cria o frameInputInversor 
@@ -253,6 +265,8 @@ public class Main {
         panelInputInversor.add(textFieldFabricanteDoInversor);
         
         panelInputInversor.add(buttonSubmeterInversor);
+        
+        panelInputInversor.add(buttonRetornarDeInversorParaFuncionario);
         
         frameInputInversor.add(panelInputInversor);
         
@@ -436,6 +450,41 @@ public class Main {
         			JOptionPane.showMessageDialog(frameInputInversor, "Inversor com os seguintes dados:/nModelo:" + inversor.getModelo() + "/nPotência: " + inversor.getPotencia() + "/nPreço: " + inversor.getPreco() + "/nFabricante: " + inversor.getFabricante() + "/nFoi cadastrado com sucesso!");
         		}
         	}
+        });
+        
+        buttonRetornarDeClienteParaInicial.addActionListener(e -> {
+        	frameCliente.setVisible(false);
+        	frameInicial.setVisible(true);
+        });
+        
+        buttonRetornarDeFuncionarioParaInicial.addActionListener(e -> {
+        	frameFuncionario.setVisible(false);
+        	frameInicial.setVisible(true);
+        });
+        
+        buttonRetornarDeInputClienteParaCliente.addActionListener(e -> {
+        	frameInputCliente.setVisible(false);
+        	frameCliente.setVisible(true);
+        });
+        
+        buttonRetornarDeInputProjetoParaCliente.addActionListener(e -> {
+        	frameInputProjeto.setVisible(false);
+        	frameCliente.setVisible(true);
+        });
+        
+        buttonRetornarDeFabricanteParaFuncionario.addActionListener(e -> {
+        	frameInputFabricante.setVisible(false);
+        	frameFuncionario.setVisible(true);
+        });
+        
+        buttonRetornarDePlacaSolarParaFuncionario.addActionListener(e -> {
+        	frameInputPlacaSolar.setVisible(false);
+        	frameFuncionario.setVisible(true);
+        });
+        
+        buttonRetornarDeInversorParaFuncionario.addActionListener(e -> {
+        	frameInputInversor.setVisible(false);
+        	frameFuncionario.setVisible(true);
         });
 
         // Centraliza o frame inicial
