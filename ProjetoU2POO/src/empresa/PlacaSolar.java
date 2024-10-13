@@ -2,11 +2,11 @@ package empresa;
 
 public class PlacaSolar {
 	private String modelo;
-	private int capacidade;
+	private double capacidade;
 	private double preco;
 	private Fabricante fabricante;
 	
-	public PlacaSolar(String modelo, int capacidade, double preco, Fabricante fabricante) {
+	public PlacaSolar(String modelo, double capacidade, double preco, Fabricante fabricante) {
 		this.modelo = modelo;
 		this.capacidade = capacidade;
 		this.preco = preco;
@@ -17,7 +17,7 @@ public class PlacaSolar {
 		return modelo;
 	}
 
-	public int getCapacidade() {
+	public double getCapacidade() {
 		return capacidade;
 	}
 
