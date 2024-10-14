@@ -1,15 +1,10 @@
 package notificacao;
 
-public class NotificacaoEmail extends Notificacao {
-
-    public NotificacaoEmail(String destinatario, String mensagem) {
-        super(destinatario, mensagem);
-    }
+public class NotificacaoEmail implements INotificacao {
 
     @Override
-    public void enviar() {
-        System.out.println("Enviando email para: " + getDestinatario());
-        System.out.println("Mensagem: " + getMensagem());
+    public void enviar(String destinatario, String mensagem) {
+        System.out.println("Enviando email para: " + destinatario);
+        System.out.println("Mensagem: " + mensagem);
     }
 }
-
