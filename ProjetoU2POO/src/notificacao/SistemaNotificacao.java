@@ -2,15 +2,13 @@ package notificacao;
 
 public class SistemaNotificacao {
 
-    public void notificarSolicitacaoProjeto(String destinatario) {
+    public void notificarSolicitacaoProjeto(String destinatario, INotificacao notificacao) {
         String mensagem = "Um novo projeto foi solicitado.";
-        Notificacao notificacao = new NotificacaoEmail(destinatario, mensagem); // ou NotificacaoSMS, NotificacaoApp
-        notificacao.enviar();
+        notificacao.enviar(destinatario, mensagem);
     }
 
-    public void notificarConclusaoOrcamento(String destinatario) {
+    public void notificarConclusaoOrcamento(String destinatario, INotificacao notificacao) {
         String mensagem = "Seu orçamento está pronto!";
-        Notificacao notificacao = new NotificacaoEmail(destinatario, mensagem); // ou NotificacaoSMS, NotificacaoApp
-        notificacao.enviar();
+        notificacao.enviar(destinatario, mensagem);
     }
 }
