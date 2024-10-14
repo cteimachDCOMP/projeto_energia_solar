@@ -1,14 +1,10 @@
 package notificacao;
 
-public class NotificacaoSMS extends Notificacao {
-
-    public NotificacaoSMS(String destinatario, String mensagem) {
-        super(destinatario, mensagem);
-    }
+public class NotificacaoSMS implements INotificacao {
 
     @Override
-    public void enviar() {
-        System.out.println("Enviando SMS para: " + getDestinatario());
-        System.out.println("Mensagem: " + getMensagem());
+    public void enviar(String destinatario, String mensagem) {
+        System.out.println("Enviando SMS para: " + destinatario);
+        System.out.println("Mensagem: " + mensagem);
     }
 }
