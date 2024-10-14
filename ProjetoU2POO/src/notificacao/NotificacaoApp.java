@@ -1,14 +1,10 @@
 package notificacao;
 
-public class NotificacaoApp extends Notificacao {
-
-    public NotificacaoApp(String destinatario, String mensagem) {
-        super(destinatario, mensagem);
-    }
+public class NotificacaoApp implements INotificacao {
 
     @Override
-    public void enviar() {
-        System.out.println("Enviando notificação via WhatsApp para: " + getDestinatario());
-        System.out.println("Mensagem: " + getMensagem());
+    public void enviar(String destinatario, String mensagem) {
+        System.out.println("Enviando notificação via App para: " + destinatario);
+        System.out.println("Mensagem: " + mensagem);
     }
 }
